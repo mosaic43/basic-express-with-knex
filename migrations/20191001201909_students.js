@@ -6,6 +6,8 @@ exports.up = function(knex) {
     table.boolean('isActive')
     table.integer('cohortId')
     table.foreign('cohortId').references('Cohorts.id')
+    table.string('username').unique().notNullable()
+    table.string('password').notNullable()
   })
 };
 
